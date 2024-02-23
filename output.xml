@@ -1,120 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.1 on win32)" generated="2024-02-16T11:38:25.579475" rpa="false" schemaversion="5">
-<suite id="s1" name="SeleniumLabb" source="C:\Users\LukasAlksäter-MT23GB\Desktop\Labb\SeleniumLabb">
-<suite id="s1-s1" name="Test" source="C:\Users\LukasAlksäter-MT23GB\Desktop\Labb\SeleniumLabb\test.robot">
-<kw name="setup" type="SETUP">
+<robot generator="Robot 7.0 (Python 3.12.1 on win32)" generated="2024-02-23T20:43:58.093672" rpa="false" schemaversion="5">
+<suite id="s1" name="Test" source="C:\Users\lille\OneDrive\Desktop\LabbSelenium\SeleniumLabb\test.robot">
+<kw name="setup" owner="Resources" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-02-16T11:38:26.005334" level="INFO">Opening browser 'Chrome' to base url 'None'.</msg>
+<msg time="2024-02-23T20:43:58.262958" level="INFO">Opening browser 'Chrome' to base url 'None'.</msg>
 <arg>browser=Chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-02-16T11:38:26.005334" elapsed="2.040073"/>
+<status status="PASS" start="2024-02-23T20:43:58.262958" elapsed="1.266806"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-02-16T11:38:28.045407" elapsed="0.127658"/>
+<status status="PASS" start="2024-02-23T20:43:59.529764" elapsed="0.109975"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-02-16T11:38:28.174063" level="INFO">Opening url 'https://rental20.infotiv.net/'</msg>
+<msg time="2024-02-23T20:43:59.639739" level="INFO">Opening url 'https://rental20.infotiv.net/'</msg>
 <arg>${url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-02-16T11:38:28.173065" elapsed="0.313139"/>
+<status status="PASS" start="2024-02-23T20:43:59.639739" elapsed="0.148706"/>
 </kw>
 <kw name="Set Selenium Speed" owner="SeleniumLibrary">
 <arg>1</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2024-02-16T11:38:28.486204" elapsed="0.000000"/>
+<status status="PASS" start="2024-02-23T20:43:59.788445" elapsed="0.000000"/>
 </kw>
 <tag>setup</tag>
 <doc>starts the browser, makes the browser fullscreen and goes to infotiv rental website</doc>
-<status status="PASS" start="2024-02-16T11:38:26.003340" elapsed="2.483863"/>
+<status status="PASS" start="2024-02-23T20:43:58.261975" elapsed="1.526470"/>
 </kw>
-<test id="s1-s1-t1" name="Create New User" line="20">
-<kw name="Input Information">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-02-16T11:38:28.501165" level="INFO">Clicking button '//button[@id='createUser']'.</msg>
-<arg>//button[@id='createUser']</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-02-16T11:38:28.500167" elapsed="5.213096"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-02-16T11:38:33.714261" level="INFO">Typing text 'Bosse' into text field '//input[@id='name']'.</msg>
-<arg>//input[@id='name']</arg>
-<arg>${firstname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-02-16T11:38:33.713263" elapsed="3.138964"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-02-16T11:38:36.852227" level="INFO">Typing text 'Boss' into text field '//input[@id='last']'.</msg>
-<arg>//input[@id='last']</arg>
-<arg>${surname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-02-16T11:38:36.852227" elapsed="3.410719"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-02-16T11:38:40.263945" level="INFO">Typing text '0758934567' into text field '//input[@id='phone']'.</msg>
-<arg>//input[@id='phone']</arg>
-<arg>${number}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-02-16T11:38:40.262946" elapsed="3.128104"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-02-16T11:38:43.392059" level="INFO">Typing text 'bosse@gmail.com' into text field '//input[@id='emailCreate']'.</msg>
-<arg>//input[@id='emailCreate']</arg>
-<arg>${email}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-02-16T11:38:43.391050" elapsed="3.115175"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-02-16T11:38:46.506225" level="INFO">Typing text 'bosse@gmail.com' into text field '//input[@id='confirmEmail']'.</msg>
-<arg>//input[@id='confirmEmail']</arg>
-<arg>${email}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-02-16T11:38:46.506225" elapsed="3.128518"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-02-16T11:38:49.634743" level="INFO">Typing text 'bosseisthebest123' into text field '//input[@id='passwordCreate']'.</msg>
-<arg>//input[@id='passwordCreate']</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-02-16T11:38:49.634743" elapsed="3.142712"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-02-16T11:38:52.777455" level="INFO">Typing text 'bosseisthebest123' into text field '//input[@id='confirmPassword']'.</msg>
-<arg>//input[@id='confirmPassword']</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-02-16T11:38:52.777455" elapsed="3.204743"/>
-</kw>
+<test id="s1-t1" name="Scenario: Log in with valid email and password" line="13">
+<kw name="Given User Already Exist And Is On Homepage" owner="Resources">
 <kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2024-02-16T11:38:59.194050" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-02-16T11:38:59.194050" level="FAIL">Page should have contained element '//label[@id='signInError']' but did not.</msg>
-<arg>//label[@id='signInError']</arg>
+<msg time="2024-02-23T20:44:00.800542" level="INFO">Current page contains element '//button[@id='continue']'.</msg>
+<arg>//button[@id='continue']</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="FAIL" start="2024-02-16T11:38:55.982198" elapsed="3.215842">Page should have contained element '//label[@id='signInError']' but did not.</status>
+<status status="PASS" start="2024-02-23T20:43:59.789952" elapsed="1.010590"/>
 </kw>
-<arg>${name}</arg>
-<arg>${lastName}</arg>
-<arg>${phoneNumber}</arg>
+<tag>LogIn</tag>
+<doc>checks if user is on homepage</doc>
+<status status="PASS" start="2024-02-23T20:43:59.788445" elapsed="1.012097"/>
+</kw>
+<kw name="When User Inputs Email '${email}' And Password '${password}'" owner="Resources" source_name="User Inputs email '${email}' and password '${password}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-02-23T20:44:00.800542" level="INFO">Typing text 'bosse@gmail.com' into text field '//input[@id='email']'.</msg>
+<arg>${emailInput}</arg>
 <arg>${email}</arg>
-<arg>${password}</arg>
-<status status="FAIL" start="2024-02-16T11:38:28.499169" elapsed="30.698871">Page should have contained element '//label[@id='signInError']' but did not.</status>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-23T20:44:00.800542" elapsed="3.087392"/>
 </kw>
-<status status="FAIL" start="2024-02-16T11:38:28.487203" elapsed="30.711835">Page should have contained element '//label[@id='signInError']' but did not.</status>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-02-23T20:44:03.887934" level="INFO">Typing password into text field '//input[@id='password']'.</msg>
+<msg time="2024-02-23T20:44:05.909794" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${passwordInput}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-23T20:44:03.887934" elapsed="3.074491"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-02-23T20:44:06.962425" level="INFO">Clicking button '//button[@id='login']'.</msg>
+<arg>${loginButton}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-23T20:44:06.962425" elapsed="5.200067"/>
+</kw>
+<tag>LogIn</tag>
+<doc>logs in to the website</doc>
+<status status="PASS" start="2024-02-23T20:44:00.800542" elapsed="11.361950"/>
+</kw>
+<kw name="Then User Should Be Logged In" owner="Resources">
+<kw name="Page Should Contain Button" owner="SeleniumLibrary">
+<msg time="2024-02-23T20:44:17.186122" level="INFO">Current page contains button '//button[@id='logout']'.</msg>
+<arg>//button[@id='logout']</arg>
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<status status="PASS" start="2024-02-23T20:44:12.162492" elapsed="5.023630"/>
+</kw>
+<tag>LogIn</tag>
+<doc>checks if logout button is visible</doc>
+<status status="PASS" start="2024-02-23T20:44:12.162492" elapsed="5.023630"/>
+</kw>
+<status status="PASS" start="2024-02-23T20:43:59.788445" elapsed="17.397677"/>
 </test>
 <doc>test for Infotiv rental website</doc>
-<status status="FAIL" start="2024-02-16T11:38:25.625351" elapsed="33.575680"/>
-</suite>
-<status status="FAIL" start="2024-02-16T11:38:25.582466" elapsed="33.619564"/>
+<status status="PASS" start="2024-02-23T20:43:58.094648" elapsed="19.091474"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="SeleniumLabb">SeleniumLabb</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s1" name="Test">SeleniumLabb.Test</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test">Test</stat>
 </suite>
 </statistics>
 <errors>

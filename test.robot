@@ -2,89 +2,39 @@
 Documentation    test for Infotiv rental website
 Library    SeleniumLibrary
 Suite Setup    setup
-
-*** Variables ***
-${url}    https://rental20.infotiv.net/
-${email}    bosse@gmail.com
-${password}    bosseisthebest123
-${emailInput}    //input[@id='email']
-${passwordInput}    //input[@id='password']
-${loginButton}    //button[@id='login']
-${name}        Bosse
-${lastName}    Boss
-${phoneNumber}    0758934567
+Resource    Resources.robot
 
 
 
 *** Test Cases ***
-Create New User
+Create Existing User
     Input Information    ${name}  ${lastName}  ${phoneNumber}  ${email}  ${password}
 
 Scenario: Log in with valid email and password
-    Given  User already exist and is on homepage
+    Given User Already Exist And Is On Homepage
     When User Inputs Email '${email}' And Password '${password}'
-    Then User Should Be Logged in
+    Then User Should Be Logged In
 Scenario: Log in with invalid email and password
     Given User is on homepage
     When User Inputs Invalid email and password
     Then User Should Not Be Logged In
+Scenario: Renting a car
+    Given User Is Logged In And On Homepage
+    When User Chooses Date And Clicks On Continue
+    And User Chooses A Car And Inputs Information
+    Then User Should Have A Car Booked
+Scenario: Filtering Cars While Booking
+    Given User Is On Homepage
+    When User Chooses Date And Clicks On Continue
+    And User Chooses A Filter
+    Then A car should appear
+Scenario: Unbooking A Car (Only works if you run renting a car first)
+    Given User Is Logged In And On Homepage
+    And User Has Booked A Car
+    When User Clicks On Cancel Booking
+    Then Users Car Booking Should Be Cancelled
 
 
-*** Keywords ***
-setup
-    [Documentation]    starts the browser, makes the browser fullscreen and goes to infotiv rental website
-    [Tags]    setup
-    Open Browser    browser=Chrome
-    Maximize Browser Window
-    Go To    ${url}
-    Set Selenium Speed    1
 
-User already exist and is on homepage
-    [Documentation]    checks if user is on homepage
-    [Tags]    LogIn
-    Page Should Contain Element    //button[@id='continue']
 
-User Inputs email '${email}' and password '${password}'
-    [Documentation]    logs in to the website
-    [Tags]    LogIn
-    Input Text    ${emailInput}    ${email}
-    Input Password    ${passwordInput}    ${password}
-    Click Button    ${loginButton}
 
-User Should Be Logged In
-    [Documentation]    checks if logout button is visible
-    [Tags]    LogIn
-    Page Should Contain Button        //button[@id='logout']
-    
-User Inputs Invalid email and password
-    [Documentation]    logs in with wrong email and password
-    [Tags]    LogIn
-    Input Text    ${emailInput}    fel@gmail.com
-    Input Password    ${passwordInput}    12345678
-    Click Button    ${loginButton}
-
-User is on homepage
-    [Documentation]    checks if user is on homepage
-    [Tags]    LogIn
-    Page Should Contain Element    //button[@id='continue']
-
-User Should Not Be Logged In
-    [Documentation]    checks if wrong password popup appears
-    [Tags]    LogIn
-    Page Should Contain Element    //label[@id='signInError']
-
-Input Information
-    [Documentation]    test creating existing user in DDT format
-    [Tags]    createUserDDT
-    Click Button    //button[@id='createUser']
-    [Arguments]    ${firstname}  ${surname}  ${number}  ${email}  ${password}
-    Input Text        //input[@id='name']    ${firstname}
-    Input Text    //input[@id='last']    ${surname}
-    Input Text    //input[@id='phone']   ${number}
-    Input Text    //input[@id='emailCreate']  ${email}
-    Input Text   //input[@id='confirmEmail']  ${email}
-    Input Text    //input[@id='passwordCreate']  ${password}
-    Input Text    //input[@id='confirmPassword']    ${password}
-
-    Page Should Contain Element    //label[@id='signInError']
-    
